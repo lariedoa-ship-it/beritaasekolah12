@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduViral - Berita Pendidikan</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f5f5;
+    color:#151515;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    background:#111;
+    color:#aaa;
+    padding:8px 6%;
+    font-size:13px;
+
+    display:flex;
+    justify-content:space-between;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:white;
+    border-bottom:1px solid #ddd;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+
+    height:75px;
+    padding:0 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:900;
+    letter-spacing:-2px;
+}
+
+.logo span{
+    color:#e50914;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+
+    font-size:14px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#e50914;
+}
+
+/* =========================
+   BREAKING NEWS
+========================= */
+
+.breaking{
+    height:42px;
+
+    background:#e50914;
+    color:white;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.breaking-title{
+    background:#b00008;
+
+    height:100%;
+
+    padding:0 20px;
+
+    display:flex;
+    align-items:center;
+
+    font-size:13px;
+    font-weight:bold;
+
+    white-space:nowrap;
+}
+
+.ticker{
+    white-space:nowrap;
+
+    padding-left:30px;
+
+    font-size:14px;
+    font-weight:bold;
+
+    animation:ticker 20s linear infinite;
+}
+
+@keyframes ticker{
+
+    from{
+        transform:translateX(100%);
+    }
+
+    to{
+        transform:translateX(-100%);
+    }
+
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    max-width:1200px;
+
+    margin:35px auto;
+
+    padding:0 20px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:20px;
+}
+
+.hero-main{
+
+    height:450px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:10px;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.1)
+    ),
+    url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80")
+    center/cover;
+}
+
+.hero-content{
+
+    position:absolute;
+
+    bottom:0;
+
+    padding:30px;
+
+    color:white;
+}
+
+.label{
+
+    display:inline-block;
+
+    background:#e50914;
+
+    padding:6px 10px;
+
+    border-radius:4px;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    margin-bottom:12px;
+}
+
+.hero-content h1{
+
+    font-size:38px;
+
+    line-height:1.1;
+
+    margin-bottom:12px;
+}
+
+.meta{
+
+    color:#777;
+
+    font-size:12px;
+}
+
+.hero-content .meta{
+    color:#ddd;
+}
+
+/* =========================
+   SIDE NEWS
+========================= */
+
+.side-news{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.side-card{
+
+    background:white;
+
+    display:grid;
+
+    grid-template-columns:120px 1fr;
+
+    min-height:140px;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+}
+
+.side-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+.side-content{
+
+    padding:14px;
+}
+
+.side-content h3{
+
+    font-size:16px;
+
+    line-height:1.3;
+
+    margin:7px 0;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+
+    margin-top:45px;
+}
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-bottom:3px solid #e50914;
+
+    padding-bottom:10px;
+
+    margin-bottom:20px;
+}
+
+.section-header h2{
+    font-size:23px;
+}
+
+.section-header a{
+
+    color:#e50914;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:30px;
+}
+
+.news-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+}
+
+/* =========================
+   NEWS CARD
+========================= */
+
+.news-card{
+
+    background:white;
+
+    border-radius:9px;
+
+    overflow:hidden;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+
+    transition:.3s;
+}
+
+.news-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.news-card img{
+
+    width:100%;
+
+    height:190px;
+
+    object-fit:cover;
+}
+
+.news-body{
+
+    padding:17px;
+}
+
+.news-body h3{
+
+    font-size:18px;
+
+    line-height:1.35;
+
+    margin:8px 0;
+}
+
+.news-body h3:hover{
+
+    color:#e50914;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar-box{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:9px;
+
+    margin-bottom:20px;
+}
+
+.sidebar-title{
+
+    border-left:4px solid #e50914;
+
+    padding-left:10px;
+
+    margin-bottom:15px;
+}
+
+/* =========================
+   TRENDING
+========================= */
+
+.trending{
+
+    display:flex;
+
+    gap:12px;
+
+    padding:13px 0;
+
+    border-bottom:1px solid #eee;
+}
+
+.trending:last-child{
+    border-bottom:none;
+}
+
+.number{
+
+    font-size:25px;
+
+    font-weight:900;
+
+    color:#ddd;
+}
+
+.trending h4{
+
+    font-size:14px;
+
+    line-height:1.4;
+}
+
+/* =========================
+   TIKTOK BOX
+========================= */
+
+.tiktok{
+
+    background:#111;
+
+    color:white;
+
+    padding:22px;
+
+    border-radius:9px;
+}
+
+.tiktok h3{
+
+    color:#ff3040;
+
+    margin-bottom:12px;
+}
+
+.tiktok p{
+
+    color:#ccc;
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    margin-top:60px;
+
+    background:#111;
+
+    color:white;
+
+    padding:45px 20px 20px;
+}
+
+.footer{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:40px;
+}
+
+.footer h3{
+    margin-bottom:12px;
+}
+
+.footer p,
+.footer a{
+
+    color:#999;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.footer a{
+    display:block;
+}
+
+.copyright{
+
+    max-width:1200px;
+
+    margin:30px auto 0;
+
+    border-top:1px solid #333;
+
+    padding-top:20px;
+
+    color:#666;
+
+    font-size:12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    .topbar{
+        display:none;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .content{
+        grid-template-columns:1fr;
+    }
+
+    .hero-main{
+        height:360px;
+    }
+
+    .hero-content h1{
+        font-size:28px;
+    }
+
+    .footer{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .news-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-main{
+        height:320px;
+    }
+
+    .hero-content{
+        padding:20px;
+    }
+
+    .hero-content h1{
+        font-size:24px;
+    }
+
+    .side-card{
+        grid-template-columns:100px 1fr;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<div class="topbar">
+
+    <span id="tanggal">
+        Senin, 5 Oktober 2026
+    </span>
+
+    <span>
+        Portal Berita Pendidikan Indonesia
+    </span>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="navbar">
+
+    <div class="logo">
+        Edu<span>Viral</span>
+    </div>
+
+    <nav>
+
+        <a href="#">HOME</a>
+
+        <a href="#">PENDIDIKAN</a>
+
+        <a href="#">SEKOLAH</a>
+
+        <a href="#">KAMPUS</a>
+
+        <a href="#">BEASISWA</a>
+
+        <a href="#">VIRAL</a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     BREAKING NEWS
+========================= -->
+
+<div class="breaking">
+
+    <div class="breaking-title">
+        🔴 BREAKING NEWS
+    </div>
+
+    <div class="ticker">
+
+        Kisah siswa viral di TikTok kembali menjadi sorotan •
+        #ummcampus ramai di TikTok •
+        Dunia pendidikan Indonesia menjadi perhatian publik •
+        Simak berita pendidikan terbaru hari ini
+
+    </div>
+
+</div>
+
+
+<main class="container">
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+
+<article class="hero-main">
+
+    <div class="hero-content">
+
+        <span class="label">
+            VIRAL PENDIDIKAN
+        </span>
+
+        <h1>
+            Sempat Viral Pamit Tinggalkan Sekolah,
+            Ikhsan Kini Kembali ke Kelas Lewat PIP
+        </h1>
+
+        <div class="meta">
+            Pendidikan • Berita Viral • 10 Mei 2026
+        </div>
+
+    </div>
+
+</article>
+
+
+<div class="side-news">
+
+
+<article class="side-card">
+
+    <img
+    src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=500&q=80"
+    alt="Mahasiswa">
+
+    <div class="side-content">
+
+        <span class="label">
+            TRENDING
+        </span>
+
+        <h3>
+            #ummcampus Jadi Trending
+            di TikTok Kategori Education
+        </h3>
+
+        <div class="meta">
+            Kampus • 15 September 2026
+        </div>
+
+    </div>
+
+</article>
+
+
+<article class="side-card">
+
+    <img
+    src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=500&q=80"
+    alt="Sekolah">
+
+    <div class="side-content">
+
+        <span class="label">
+            SEKOLAH
+        </span>
+
+        <h3>
+            Kisah Siswa yang Viral
+            di Media Sosial
+        </h3>
+
+        <div class="meta">
+            Pendidikan Indonesia
+        </div>
+
+    </div>
+
+</article>
+
+
+<article class="side-card">
+
+    <img
+    src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=500&q=80"
+    alt="Kampus">
+
+    <div class="side-content">
+
+        <span class="label">
+            KAMPUS
+        </span>
+
+        <h3>
+            Aktivitas Mahasiswa
+            Ramai Dibicarakan di TikTok
+        </h3>
+
+        <div class="meta">
+            Kampus • Viral
+        </div>
+
+    </div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     BERITA
+========================= -->
+
+<section class="section">
+
+<div class="section-header">
+
+    <h2>
+        Berita Pendidikan Terkini
+    </h2>
+
+    <a href="#">
+        Lihat Semua →
+    </a>
+
+</div>
+
+
+<div class="content">
+
+
+<!-- NEWS -->
+<div class="news-grid">
+
+
+<article class="news-card">
+
+    <img
+    src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+    alt="Sekolah">
+
+    <div class="news-body">
+
+        <span class="label">
+            VIRAL
+        </span>
+
+        <h3>
+            Sempat Viral di TikTok,
+            Ikhsan Akhirnya Kembali
+            ke Bangku Sekolah
+        </h3>
+
+        <div class="meta">
+            10 Mei 2026 • Pendidikan
+        </div>
+
+    </div>
+
+</article>
+
+
+<article class="news-card">
+
+    <img
+    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+    alt="Universitas">
+
+    <div class="news-body">
+
+        <span class="label">
+            KAMPUS
+        </span>
+
+        <h3>
+            #ummcampus Tembus Trending
+            Kategori Education Indonesia
+        </h3>
+
+        <div class="meta">
+            15 September 2026 • Kampus
+        </div>
+
+    </div>
+
+</article>
+
+
+<article class="news-card">
+
+    <img
+    src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80"
+    alt="Buku">
+
+    <div class="news-body">
+
+        <span class="label">
+            BEASISWA
+        </span>
+
+        <h3>
+            Program Indonesia Pintar
+            Jadi Harapan Siswa untuk
+            Melanjutkan Pendidikan
+        </h3>
+
+        <div class="meta">
+            Pendidikan • Beasiswa
+        </div>
+
+    </div>
+
+</article>
+
+
+<article class="news-card">
+
+    <img
+    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+    alt="Pelajar">
+
+    <div class="news-body">
+
+        <span class="label">
+            TEKNOLOGI
+        </span>
+
+        <h3>
+            TikTok Mengubah Cara
+            Sekolah dan Kampus
+            Berkomunikasi
+        </h3>
+
+        <div class="meta">
+            Teknologi Pendidikan
+        </div>
+
+    </div>
+
+</article>
+
+
+</div>
+
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<aside>
+
+
+<div class="sidebar-box">
+
+    <h3 class="sidebar-title">
+        🔥 Berita Terpopuler
+    </h3>
+
+
+    <div class="trending">
+
+        <div class="number">
+            01
+        </div>
+
+        <h4>
+            Siswa Viral di TikTok
+            Akhirnya Bisa Kembali Sekolah
+        </h4>
+
+    </div>
+
+
+    <div class="trending">
+
+        <div class="number">
+            02
+        </div>
+
+        <h4>
+            #ummcampus Jadi Trending
+            Education Indonesia
+        </h4>
+
+    </div>
+
+
+    <div class="trending">
+
+        <div class="number">
+            03
+        </div>
+
+        <h4>
+            Kisah Perjuangan Siswa
+            Viral di Media Sosial
+        </h4>
+
+    </div>
+
+
+    <div class="trending">
+
+        <div class="number">
+            04
+        </div>
+
+        <h4>
+            PIP Membantu Siswa
+            Melanjutkan Pendidikan
+        </h4>
+
+    </div>
+
+
+    <div class="trending">
+
+        <div class="number">
+            05
+        </div>
+
+        <h4>
+            Aktivitas Kampus
+            Ramai di TikTok
+        </h4>
+
+    </div>
+
+</div>
+
+
+<div class="tiktok">
+
+    <h3>
+        🔥 VIRAL DI TIKTOK
+    </h3>
+
+    <p>
+        Media sosial semakin sering menjadi
+        tempat masyarakat menemukan cerita
+        dan informasi seputar dunia pendidikan.
+    </p>
+
+    <br>
+
+    <p>
+        EduViral merangkum berbagai fenomena
+        pendidikan yang ramai dibicarakan
+        dengan tetap mengutamakan informasi
+        yang dapat diverifikasi.
+    </p>
+
+</div>
+
+
+</aside>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer">
+
+
+<div>
+
+    <h3>
+        Edu<span style="color:#e50914;">
+            Viral
+        </span>
+    </h3>
+
+    <p>
+        Portal berita pendidikan Indonesia
+        yang membahas berita sekolah,
+        kampus, beasiswa, teknologi,
+        dan fenomena pendidikan viral.
+    </p>
+
+</div>
+
+
+<div>
+
+    <h3>
+        Navigasi
+    </h3>
+
+    <a href="#">Beranda</a>
+
+    <a href="#">Pendidikan</a>
+
+    <a href="#">Sekolah</a>
+
+    <a href="#">Kampus</a>
+
+    <a href="#">Beasiswa</a>
+
+</div>
+
+
+<div>
+
+    <h3>
+        Informasi
+    </h3>
+
+    <a href="#">Tentang Kami</a>
+
+    <a href="#">Redaksi</a>
+
+    <a href="#">Kontak</a>
+
+    <a href="#">Kebijakan Privasi</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+    © 2026 EduViral Indonesia.
+    Semua Hak Dilindungi.
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   TANGGAL OTOMATIS
+========================= */
+
+const tanggal =
+document.getElementById("tanggal");
+
+const hari = [
+    "Minggu",
+    "Senin",
+    "Selasa",
+    "Rabu",
+    "Kamis",
+    "Jumat",
+    "Sabtu"
+];
+
+const bulan = [
+    "Januari",
+    "Februari",
+    "Maret",
+    "April",
+    "Mei",
+    "Juni",
+    "Juli",
+    "Agustus",
+    "September",
+    "Oktober",
+    "November",
+    "Desember"
+];
+
+const sekarang = new Date();
+
+tanggal.innerHTML =
+hari[sekarang.getDay()] +
+", " +
+sekarang.getDate() +
+" " +
+bulan[sekarang.getMonth()] +
+" " +
+sekarang.getFullYear();
+
+
+/* =========================
+   TICKER RANDOM
+========================= */
+
+const berita = [
+
+    "Siswa viral di TikTok kembali melanjutkan pendidikan",
+
+    "#ummcampus menjadi sorotan di TikTok",
+
+    "Berita pendidikan terbaru Indonesia",
+
+    "Kisah inspiratif pelajar Indonesia",
+
+    "Program Indonesia Pintar membantu siswa melanjutkan sekolah"
+
+];
+
+let ticker =
+document.querySelector(".ticker");
+
+setInterval(() => {
+
+    let random =
+    berita[Math.floor(Math.random()*berita.length)];
+
+    ticker.innerHTML =
+    random + " • EduViral • " +
+    "Berita Pendidikan Indonesia";
+
+},5000);
+
+</script>
+
+</body>
+</html>
